@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 import pandas as pd
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='Templates')
 
 # Load model and data
 model = pickle.load(open('RidgeModel.pkl', 'rb'))
