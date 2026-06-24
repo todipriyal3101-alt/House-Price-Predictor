@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import pickle
 import numpy as np
 import pandas as pd
+import os
 
 app = Flask(__name__, template_folder='Templates')
 
@@ -30,7 +31,6 @@ def predict():
                            prediction=round(prediction, 2),
                            locations=sorted(data['location'].unique()))
 
-import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5001))
     app.run(debug=False, host='0.0.0.0', port=port)
